@@ -4,7 +4,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rimraf dist/ && babel ./ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
-    "start": "node app.babel.js"
+    
+    "start": "forever start --minUptime 1000 --spinSleepTime 1000 app.babel.js"
   },
   "dependencies": {
     "@lemay/mws-api-lite": "^1.0.6",
