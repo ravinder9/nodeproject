@@ -3284,12 +3284,12 @@ ebay.xmlRequest({
             itemid:itemid,
           },
         function(error, data) {
-            if (error) {
+            /*if (error) {
                 res.send(error);
             } else {
                 res.send('success');
-            }
-            //res.render('/pages/products/edit_ebay_record_price.ejs', { message: 'Quantity changed successfuly' }); 
+            }*/
+            res.render('/pages/products/edit_ebay_record_price.ejs', { message: 'Quantity changed successfuly' }); 
         });
 
 });
@@ -3320,11 +3320,13 @@ ebay.xmlRequest({
             itemid:itemid,
           },
         function(error, data) {
-            if (error) {
+            res.render("pages/products/edit_ebay_record_price", { productsmatch: productsfind,user:req.user ,message:true});
+ 
+            /*if (error) {
                 res.send('success');
             } else {
                 res.send('success');
-            }
+            }*/
         });
 
 });
