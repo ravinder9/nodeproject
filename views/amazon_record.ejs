@@ -1,0 +1,82 @@
+
+<%- contentFor('content') %>
+<div class="right_col" role="main">
+          
+          <!-- top tiles -->
+           <div class="x_content">
+        
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th>Id</th>
+                          <th>MarketPlaceId</th>
+                          <th>Secret Key</th>
+                          <th>AWSAccessKeyId</th>
+                          <th>Update</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      <% var count = 0 %>
+                      <% user.forEach(function(value){
+console.log(value) 
+    
+                       %>
+                        <tr>
+                            <th scope="row"><%= count %></th>
+                            <td><%= value._id %></td>
+                          <% if (value.mws.length > 0) { %>
+                            <td><%= value.mws[0].marketplaceid %></td>
+                            <td><%= value.mws[0].secretkey %></td>
+                            <td><%= value.mws[0].awsaccesskeyid %></td>
+                            <td><a href="/edit_record?id=<%= value._id %>">Edit</a></td>
+                          <% }else{ %>
+                            <td>null</td>
+                            <td>null</td>
+                            <td>null</td>
+                            <td><a href="/edit_record?id=<%= value._id %>">Edit</a></td>
+                          <% } %>
+                        </tr>
+                          <% count++ %>
+                          <% }) %>
+                      </tbody>
+                    </table>
+
+                  </div>
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,158 @@
+<%- contentFor('content') %>
+    <div class="right_col" role="main">
+<a class="btn btn-success btn-lg " href="javascript: history.go(-1)">←Back To previous page</a>
+        <% if (message.length > 0) { %>
+            <div class="alert alert-success hidemessage">
+                <%= message %>
+            </div>
+            <% } %>
+
+
+
+                <!-- top tiles -->
+                <div id="amzDiv" class="panel panel-primary" style="width:50%;margin:0 auto; margin-top:10%; margin-bottom:10%">
+                    <div>
+
+                        <div id="error_warning" style="display: none;"></div>
+                        <span id='close' style="display:none; float: right;" onclick='this.parentNode.parentNode.removeChild(this.parentNode); return false;'>x</span>
+
+                    </div>
+                    <div class="panel-heading">
+                        <h3>Amazon MWS API's</h3>
+                    </div>
+                    <div class="panel-body" style="height:40%; text-align:center; margin:10px;">
+                        <p class="bg-info" id="msg"></p>
+                        <form class="form-horizontal" role="form" id="" method="post" action="/products/get_ebay_order">
+
+
+                            <div class="form-group">
+                               <!--  <label class="control-label col-sm-12 setAlign" for="marketplaceid">select MarketPlace for get order :</label> -->
+                                <div class="input-group checkbox-container col-sm-12">
+
+                                    
+                                        <!-- <div align="left">
+                                            <span style="font-weight: bold; font-size: 12px;">IN region:</span>
+                                           
+                                                <input class="setmargn" name="IN[]" type="checkbox" id="IN" value="A21TJRUUN4KGV" />India
+                                             
+                                      
+                                        </div> -->
+                                        <!-- <div align="left"> <span style="font-weight: bold; font-size: 12px;">NA region:</span>
+                                          
+
+
+                                                <input class="setmargn" name="NA[]" type="checkbox" id="US" value="ATVPDKIKX0DER" />United States
+
+
+                                               
+
+                                                    <input class="setmargn" name="NA[]" type="checkbox" id="CA" value="A2EUQ1WTGCTBG2" />Canada
+
+
+
+
+
+                                                   
+
+                                                        <input class="setmargn" name="NA[]" type="checkbox" id="MX" value="A1AM78C64UM0Y8" />Mexico
+
+
+                                   
+
+                                                            
+                                        </div> -->
+
+                                        <!-- <div align="left"><span style="font-weight: bold; font-size: 12px;">BR region:</span>
+                                          
+                                                <input class="setmargn" name="BR[]" type="checkbox" id="BR" value="A2Q3Y263D00KWC" />Brazil
+                                              
+                                      
+                                                    
+                                                    
+                                        </div> -->
+
+                                        <!-- <div align="left"><span style="font-weight: bold; font-size: 12px;">EU region:</span>
+                                       
+                                                <input class="setmargn" name="EU[]" type="checkbox" id="FR" value="A13V1IB3VIYZZH" />France
+
+
+                                               
+
+                                                    <input class="setmargn" name="EU[]" type="checkbox" id="DE" value="A1PA6795UKMFR9" />Germany
+
+
+
+                                                    
+
+                                                        <input class="setmargn" name="EU[]" type="checkbox" id="IT" value="APJ6JRA9NG5V4" />Italy
+
+
+                                                        
+
+                                                            <input class="setmargn" name="EU[]" type="checkbox" id="UK" value="A1F83G8C2ARO7P" />United Kingdom
+
+
+
+
+                                                            
+
+                                                                <input class="setmargn" name="EU[]" type="checkbox" id="ES" value="A1RKKUPIHCS9HS" />Spain
+
+
+                                                                
+
+
+                                        </div> -->
+                                        <!-- <div align="left"><span style="font-weight: bold; font-size: 12px;">CN region:</span>
+                                      
+                                                <input class="setmargn" name="CN[]" type="checkbox" id="CN" value="AAHKV2X7AFYLW" />China
+                                               
+                                     
+                                                  
+                                                 
+
+                                        </div> -->
+
+                                       <!--  <div align="left"><span style="font-weight: bold; font-size: 12px;">FE region:</span>
+                                           
+
+                                                <input class="setmargn" name="FE[]" type="checkbox" id="JP" value="A1VC38T7YXB528" />Japan
+
+
+
+                                               
+
+                                                    <input class="setmargn" name="FE[]" type="checkbox" id="AU" value="A39IBJ37TRP1C6" />Australia
+
+                                      
+                                       
+
+                                                        
+                                        </div> -->
+
+
+
+                                       
+
+
+
+                                </div>
+                                   </div>
+
+
+                            
+                           
+
+
+
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <input type="submit" id="amz_cred_save" class="btn btn-primary btn-lg" value="Download" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="loader" id="loaderDiv" style="display: none;"></div>
+    </div>
+    

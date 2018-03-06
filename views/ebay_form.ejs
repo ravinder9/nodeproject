@@ -1,0 +1,120 @@
+
+<%- contentFor('content') %>
+<div class="right_col" role="main"> 
+    
+   
+
+
+
+          <!-- top tiles -->
+          <div class="panel panel-primary" style="width:50%;margin:0 auto; margin-top:10%; margin-bottom:10%">
+<div class="panel-heading"><h3>Ebay API's</h3></div>
+<div class="panel-body" style="height:40%; text-align:center; margin:10px;" >
+<p class="bg-info" id="msg"></p>
+ <form class="form-horizontal" role="form" id="" method="post" action="/products/ebay_api">
+
+  <div class="form-group">
+    <label class="control-label col-sm-5 setAlign" for="sellerId">Client Id:</label>
+     <div class="input-group date col-sm-7">
+        <input type="text" class="form-control" name="clientid" value=<% if (user.ebay.length>0) { %><%= user.ebay[0].clientid %> <% } %> >
+     </div>
+  </div>
+  
+  <div class="form-group">
+    <label class="control-label col-sm-5 setAlign" for="marketplaceid">Dev Id:</label>
+     <div class="input-group date col-sm-7">
+        <input type="text" class="form-control" name="devid" value=<% if (user.ebay.length>0) { %><%= user.ebay[0].devid %><% } %>>
+     </div>
+  </div>
+ 
+  
+  <div class="form-group">
+    <label class="control-label col-sm-5 setAlign" for="clientsecret">Client Secret:</label>
+     <div class="input-group date col-sm-7">
+        <input type="text" class="form-control" name="clientsecret" value=<% if (user.ebay.length>0) { %><%= user.ebay[0].clientsecret %><% } %>>
+     </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-5 setAlign" for="token">Token:</label>
+     <div class="input-group date col-sm-7">
+        <input type="text" class="form-control" name="token" value=<% if (user.ebay.length>0) { %><%= user.ebay[0].token %><% } %>>
+     </div>
+  </div>
+<div class="form-group">
+                                <label class="control-label col-sm-12 setAlign" for="marketplaceid">Select Ebay marketplaces</label>
+                <div class="input-group checkbox-container col-sm-12">
+               <input class="setmargn" name="AU[]" type="checkbox" id="AU" value="15" />Australia
+                     <input class="setmargn" name="AT[]" type="checkbox" id="AT" value="16" />Austria
+                    <input class="setmargn" name="BENL[]" type="checkbox" id="BENL" value="123" />Belgium_Dutch
+                    <input class="setmargn" name="BEFR[]" type="checkbox" id="BEFR" value="Belgium_French" />Belgium_French
+                    <input class="setmargn" name="BEFR[]" type="checkbox" id="CA" value="Canada" />Canada
+                    <input class="setmargn" name="CAFR[]" type="checkbox" id="CAFR" value="CanadaFrench" />CanadaFrench
+                    <input class="setmargn" name="FR[]" type="checkbox" id="FR" value="France" />France
+                    <input class="setmargn" name="DE[]" type="checkbox" id="DE" value="Germany" />Germany
+                    <input class="setmargn" name="HK[]" type="checkbox" id="HK" value="HongKong" />HongKong
+                    <input class="setmargn" name="IN[]" type="checkbox" id="IN" value="India" />India
+                    <input class="setmargn" name="IE[]" type="checkbox" id="IE" value="Ireland" />Ireland
+                    <input class="setmargn" name="IT[]" type="checkbox" id="IT" value="Italy" />Italy
+                    <input class="setmargn" name="MY[]" type="checkbox" id="MY" value="Malaysia" />Malaysia
+                    <!-- <input class="setmargn" name="NL[]" type="checkbox" id="NL" value="Philippines" />Philippines
+                    <input class="setmargn" name="PH[]" type="checkbox" id="PH" value="Netherlands" />Netherlands
+                    <input class="setmargn" name="PL[]" type="checkbox" id="PL" value="Poland" />Poland
+                    <input class="setmargn" name="RU[]" type="checkbox" id="RU" value="Russia" />Russia
+                    <input class="setmargn" name="SG[]" type="checkbox" id="SG" value="Singapore" />Singapore
+                    <input class="setmargn" name="ES[]" type="checkbox" id="ES" value="Spain" />Spain
+                    <input class="setmargn" name="CH[]" type="checkbox" id="CH" value="Switzerland" />Switzerland
+                    <input class="setmargn" name="UK[]" type="checkbox" id="UK" value="UK" />UKUS -->
+                    <input class="setmargn" name="US[]" type="checkbox" id="US" value="0" />US
+                </div>
+            </div>
+
+ 
+  <div class="form-group">
+    <div class="col-sm-12">
+      <button id="send" class="btn btn-primary btn-lg" type="submit">
+         <span class="glyphicon glyphicon-send" ></span> Submit
+      </button>
+    </div>
+  </div>
+</form>
+</div>
+</div>
+ <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,56 @@
+Heroku detail:-
+
+Site url:- https://node-ravinder-project.herokuapp.com
+
+username:-  test1@gmail.com
+password:-  123456
+
+
+heroku push code on server:
+
+1. write command:  heroku login
+
+2. Enter email and password that is:- 
+username:-  test1@gmail.com
+password:-  123456
+
+3. go in folder with command cd /home/rexweb/Desktop/amazon/node-ravinder-project
+
+4. write command:- git add .
+ then:- git commit -am "make it better"
+ last:- git push heroku master
+
+ 5. before push also change the database local url with live url in config/database.js
+
+
+
+ ebay sandbox detail:-
+
+ebay developer account:-
+
+user:- ravinder8237
+pass:-  ravinder@123
+
+
+
+
+ebay sandbox:-
+
+email:-  phpdeveloper9034@gmail.com
+pass:-    ravinder@123
+
+
+App ID (Client ID):-    ravinder-nodeappl-SBX-0134e8f72-1416c6b1
+
+Dev ID:-            0477b6b6-14ae-4c80-a401-1b2515985ade
+
+Cert ID (Client Secret):-  SBX-134e8f721a84-f900-44a9-bdcd-5101
+
+
+token :-   AgAAAA**AQAAAA**aAAAAA**+uReWg**nY+sHZ2PrBmdj6wVnY+sEZ2PrA2dj6wFk4GmAZCFoAydj6x9nY+seQ**b3MEAA**AAMAAA**6b8JBXjqafigc/FbBH/xL6uG1/42MzLqpnTEE0JtdwbBpuSs2WxPtbC4WVIWiUjhGafNaJ2r/a59DLzelOLfGmPKVxlEg3qJ82okXctkldZ0M5WarZ75l8vmyA1tlOsCOq56AcvwCYq15H72M1DNtUY8TEOuoAX1rJu39fY/XSDppzamK5naXAOr3DHBYmv7Y7vQbVAtKYRDDbRyMOi8E76kVtamPvadVZaWf1oQQpxzvpyFWu2d3mm5sh6X3HwzpGUtgDosZnr6c7CeZHxXofO7KbUDeJh4yMPCOVTTyU2+XDbY2krKuZtJcpSc7tfwMNNTVy6SffuZEtq9lfGQSgUGoEWVq4AmKSlyti5Kbg96lty0AYXErvABQjioOOh126Fl5IywYATcj6gGIMuLJPal2YZD4b+DYcb0UvzHl3SN+p51VFm7vooxEPtz4nNnTnvN6f0Irs4rGJUn3Z09UBTSYaqwPVbH0iV+MxgQVbyLAvoZZJHqRmqPH9Ee91q0neX2hPOpuslSKumr1ZY+kSCt/8nBz1Wa18QI2HiDRrUmfLORIhMxJDv+HjXeAADV+NohXKalCuxEGfZA1Ewk6LBS3/L60z2/9LN7zbvn74qPZ6zMkVnSairBd41OB1B7LhO7yD79Ib39A9MOn3jLbeyjJk5d/Uzcly0SMkLPl01e3KQ7eTfIPcKY+Er/hzLFLiTyZ89uY5c8sPmcCL61WetgkM26e+3ao3/5FP54gotKZ0B4OSyFKai6gSe3OcwW
+
+
+
+
+
+

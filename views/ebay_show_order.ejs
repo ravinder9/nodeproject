@@ -1,0 +1,64 @@
+<%- contentFor('content') %>
+
+    <div class="right_col" role="main">
+<a class="btn btn-success btn-lg " href="javascript: history.go(-1)">←Back To previous page</a>
+
+        <!-- top tiles -->
+        <div class="container">
+            <h1>Orders Detail</h1>
+
+            <div class="table-responsive">
+                <table id="example" class="table table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <td>Orderid</td>
+                            <td>order status</td>
+                            <td>sku</td>
+                            <td>ASIN</td>
+                            
+                            <td>Quantity</td>
+                            <td>marketplace</td>
+                            
+                        </tr>
+                    </thead>
+                    <% orders.forEach(function (orderinfo) {%>
+
+                        <tr>
+                            <td class="comment more">
+                                <%= orderinfo.orderlist.amazon_order_id %>
+                            </td>
+                            <td>
+                                <%= orderinfo.orderlist.order_status %>
+                            </td>
+                            <td>
+                                <%= orderinfo.orderlist.sku %>
+                            </td>
+                            <td>
+                                <%= orderinfo.orderlist.asin %>
+                            </td>
+                            <td>
+                                <%= orderinfo.orderlist.quantity %>
+                            </td>
+                            <td>
+                                <%= orderinfo.orderlist.sales_channel %>
+                            </td>
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+
+                        </tr>
+                        <% }) %>
+
+                </table>
+            </div>
+            <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+
+
+           
+        </div>

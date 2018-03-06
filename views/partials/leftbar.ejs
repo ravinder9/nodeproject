@@ -1,0 +1,78 @@
+<div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            <div class="navbar nav_title" style="border: 0;">
+              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <!-- menu profile quick info -->
+            <div class="profile clearfix">
+              <div class="profile_pic">
+                <img src="/images/img.jpg" alt="..." class="img-circle profile_img">
+              </div>
+              <div class="profile_info">
+                <span>Welcome,</span>
+                <h2><%= user.local.fname %></h2>
+              </div>
+            </div>
+            <!-- /menu profile quick info -->
+
+            <br />
+
+            <!-- sidebar menu -->
+            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+              <div class="menu_section">
+                <h3>General</h3>
+                <ul class="nav side-menu">
+                  <li><a><i class="fa fa-home"></i> Integration with API's <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <li><a href="/products/amazon_form">Amazon</a></li>
+                      <li><a href="/products/ebay_form">Ebay</a></li>
+                   <!--    <li><a href="/products/webshop_form">Webshop</a></li> -->
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-edit"></i> Products <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <!-- <li><a href="/products/fetch_product">Amazon products</a></li> -->
+                      <li><a href="/products/show_product">Show All products</a></li>
+                      <li><a href="/products/show_amazon_products">Amazon products</a></li>
+                      <li><a href="/products/show_ebay_products">Ebay products</a></li>
+                      <!-- <li><a href="/webshop_products">Webshop products</a></li> -->
+                    <li><a href="/products/update_product_with_csv">change amazon product price with csv</a></li> 
+                     <li><a href="/products/update_quantity_with_csv">change amazon product quantity with csv</a></li>
+                      <li><a href="/products/update_ebay_product_with_csv">change Ebay product price with csv</a></li> 
+                      <li><a href="/products/update_ebay_quantity_with_csv">change Ebay product quantity with csv</a></li> 
+                    </ul>
+                  </li>
+                  <li><a><i class="fa fa-edit"></i> Order <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                      <!-- <li><a href="/products/fetch_product">Amazon products</a></li> -->
+                      <li><a href="/products/get_order">Get amazon order</a></li>
+                      <li><a href="/products/show_order">Show amazon order</a></li>
+                      <li><a href="/products/get_ebay_order">Get ebay order</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- /sidebar menu -->
+
+            <!-- /menu footer buttons -->
+            <div class="sidebar-footer hidden-small">
+              <a data-toggle="tooltip" data-placement="top" title="Settings">
+                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Lock">
+                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+              </a>
+              <a data-toggle="tooltip" data-placement="top" title="Logout" href="login.html">
+                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+              </a>
+            </div>
+            <!-- /menu footer buttons -->
+          </div>
+        </div>

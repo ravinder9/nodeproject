@@ -1,0 +1,259 @@
+<%- contentFor('content') %>
+    <div class="right_col" role="main">
+
+        <% if (message.length > 0) { %>
+            <div class="alert alert-success hidemessage"> 
+                <%= message %>
+            </div>
+            <% } %>
+
+
+
+                <!-- top tiles -->
+                <div id="amzDiv" class="panel panel-primary" style="width:50%;margin:0 auto; margin-top:10%; margin-bottom:10%">
+                    <div>
+
+                        <div id="error_warning" style="display: none;"></div>
+                        <span id='close' style="display:none; float: right;" onclick='this.parentNode.parentNode.removeChild(this.parentNode); return false;'>x</span>
+
+                    </div>
+                    <div class="panel-heading">
+                        <h3>Amazon MWS API's</h3>
+                    </div>
+                    <div class="panel-body" style="height:40%; text-align:center; margin:10px;">
+                        <p class="bg-info" id="msg"></p>
+                        <form class="form-horizontal" role="form" id="" method="post" action="/products/amazon_api">
+
+                            <div class="form-group">
+                                <label class="control-label col-sm-5 setAlign" for="sellerId">SellerId:</label>
+                                <div class="input-group date col-sm-7">
+                                    <input type="text" class="form-control" name="sellerid" value=<% if (user.mws.length>0) { %>
+                                    <%= user.mws[0].sellerid %>
+                                        <% } %> >
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-sm-12 setAlign" for="marketplaceid">MarketPlaceId:</label>
+                                <div class="input-group checkbox-container col-sm-12">
+
+                                    <% if(user.mws.length > 0 ) { %>
+                                        <div align="left">
+                                            <span style="font-weight: bold; font-size: 12px;">IN region:</span>
+                                            <% if(user.mws[0].region.IN != undefined) { %>
+                                                <input class="setmargn" name="IN[]" type="checkbox" id="IN" value="A21TJRUUN4KGV" checked/>India
+                                                <% }
+                                      else
+                                      { %>
+                                                    <input class="setmargn" name="IN[]" type="checkbox" id="IN" value="A21TJRUUN4KGV" />India
+                                                    <%} %>
+                                        </div>
+                                        <div align="left"> <span style="font-weight: bold; font-size: 12px;">NA region:</span>
+                                            <% if(user.mws[0].region.NA != undefined) { 
+                                                 var checked = (user.mws[0].region.NA.includes('ATVPDKIKX0DER')?"checked" : "")%>
+
+
+                                                <input class="setmargn" name="NA[]" type="checkbox" id="US" value="ATVPDKIKX0DER" <%=checked %>/>United States
+
+
+                                                <% var checked = (user.mws[0].region.NA.includes('A2EUQ1WTGCTBG2')?"checked" : "")%>
+
+                                                    <input class="setmargn" name="NA[]" type="checkbox" id="CA" value="A2EUQ1WTGCTBG2" <%=checked %>/>Canada
+
+
+
+
+
+                                                    <% var checked = (user.mws[0].region.NA.includes('A1AM78C64UM0Y8')?"checked" : "")%>
+
+                                                        <input class="setmargn" name="NA[]" type="checkbox" id="MX" value="A1AM78C64UM0Y8" <%=checked %>/>Mexico
+
+
+                                                        <%} else { 
+                                       %>
+
+                                                            <input class="setmargn" name="NA[]" type="checkbox" id="US" value="ATVPDKIKX0DER" />United States
+                                                            <input class="setmargn" name="NA[]" type="checkbox" id="CA" value="A2EUQ1WTGCTBG2" />Canada
+                                                            <input class="setmargn" name="NA[]" type="checkbox" id="MX" value="A1AM78C64UM0Y8" />Mexico
+                                                            <% } %>
+                                        </div>
+
+                                        <div align="left"><span style="font-weight: bold; font-size: 12px;">BR region:</span>
+                                            <%
+                                      if(user.mws[0].region.BR != undefined)
+                                      { %>
+                                                <input class="setmargn" name="BR[]" type="checkbox" id="BR" value="A2Q3Y263D00KWC" checked/>Brazil
+                                                <% }
+                                      else
+                                      { %>
+                                                    <input class="setmargn" name="BR[]" type="checkbox" id="BR" value="A2Q3Y263D00KWC" />Brazil
+                                                    <%}%>
+                                        </div>
+
+                                        <div align="left"><span style="font-weight: bold; font-size: 12px;">EU region:</span>
+                                            <%
+                                         if(user.mws[0].region.EU != undefined) { 
+                                      var checked = (user.mws[0].region.EU.includes('A13V1IB3VIYZZH')?"checked" : "")%>
+
+                                                <input class="setmargn" name="EU[]" type="checkbox" id="FR" value="A13V1IB3VIYZZH" <%=checked %>/>France
+
+
+                                                <% var checked = (user.mws[0].region.EU.includes('A1PA6795UKMFR9')?"checked" : "")%>
+
+                                                    <input class="setmargn" name="EU[]" type="checkbox" id="DE" value="A1PA6795UKMFR9" <%=checked %>/>Germany
+
+
+
+                                                    <% var checked = (user.mws[0].region.EU.includes('APJ6JRA9NG5V4')?"checked" : "")%>
+
+                                                        <input class="setmargn" name="EU[]" type="checkbox" id="IT" value="APJ6JRA9NG5V4" <%=checked %>/>Italy
+
+
+                                                        <% var checked = (user.mws[0].region.EU.includes('A1F83G8C2ARO7P')?"checked" : "")%>
+
+                                                            <input class="setmargn" name="EU[]" type="checkbox" id="UK" value="A1F83G8C2ARO7P" <%=checked %>/>United Kingdom
+
+
+
+
+                                                            <% var checked = (user.mws[0].region.EU.includes('A1RKKUPIHCS9HS')?"checked" : "")%>
+
+                                                                <input class="setmargn" name="EU[]" type="checkbox" id="ES" value="A1RKKUPIHCS9HS" <%=checked %>/>Spain
+
+
+                                                                <%} else {  %>
+
+                                                                    <input class="setmargn" name="EU[]" type="checkbox" id="FR" value="A13V1IB3VIYZZH" />France
+
+                                                                    <input class="setmargn" name="EU[]" type="checkbox" id="DE" value="A1PA6795UKMFR9" />Germany
+                                                                    <input class="setmargn" name="EU[]" type="checkbox" id="IT" value="APJ6JRA9NG5V4" />Italy
+                                                                    <input class="setmargn" name="EU[]" type="checkbox" id="UK" value="A1F83G8C2ARO7P" />United Kingdom
+                                                                    <input class="setmargn" name="EU[]" type="checkbox" id="ES" value="A1RKKUPIHCS9HS" />Spain
+
+                                                                    <% } %>
+
+
+                                        </div>
+                                        <div align="left"><span style="font-weight: bold; font-size: 12px;">CN region:</span>
+                                            <%
+                                      if(user.mws[0].region.CN != undefined)
+                                      { %>
+                                                <input class="setmargn" name="CN[]" type="checkbox" id="CN" value="AAHKV2X7AFYLW" checked/>China
+                                                <% }
+                                      else
+                                      { %>
+                                                    <input class="setmargn" name="CN[]" type="checkbox" id="CN" value="AAHKV2X7AFYLW" />China
+                                                    <%}%>
+
+                                        </div>
+
+                                        <div align="left"><span style="font-weight: bold; font-size: 12px;">FE region:</span>
+                                            <%
+                                            if(user.mws[0].region.FE != undefined) { 
+                                                 var checked = (user.mws[0].region.FE.includes('A1VC38T7YXB528')?"checked" : "")%>
+
+                                                <input class="setmargn" name="FE[]" type="checkbox" id="JP" value="A1VC38T7YXB528" <%=checked %>/>Japan
+
+
+
+                                                <% var checked = (user.mws[0].region.FE.includes('A39IBJ37TRP1C6')?"checked" : "")%>
+
+                                                    <input class="setmargn" name="FE[]" type="checkbox" id="AU" value="A39IBJ37TRP1C6" <%=checked %>/>Australia
+
+                                                    <%  } else {
+                                       %>
+
+                                                        <input class="setmargn" name="FE[]" type="checkbox" id="JP" value="A1VC38T7YXB528" />Japan
+                                                        <input class="setmargn" name="FE[]" type="checkbox" id="AU" value="A39IBJ37TRP1C6" />Australia
+                                                        <% } %>
+                                        </div>
+
+
+
+                                        <% } else { %>
+
+
+                                            <div align="left"><span style="font-weight: bold; font-size: 12px;">IN region:</span><input class="setmargn" name="IN[]" type="checkbox" id="IN" value="A21TJRUUN4KGV" />India</div>
+                                            <div align="left"><span style="font-weight: bold; font-size: 12px;">NA region:</span> <input class="setmargn" name="NA[]" type="checkbox" id="US" value="ATVPDKIKX0DER" />United States
+                                                <input class="setmargn" name="NA[]" type="checkbox" id="CA" Value="A2EUQ1WTGCTBG2" />Canada
+                                                <input class="setmargn" name="NA[]" type="checkbox" id="MX" Value="A1AM78C64UM0Y8" />Mexico</div>
+
+                                            <div align="left"><span style="font-weight: bold; font-size: 12px;">BR region:</span><input class="setmargn" name="BR[]" type="checkbox" id="BR" value="A2Q3Y263D00KWC" />Brazil</div>
+
+                                            <div align="left"><span style="font-weight: bold; font-size: 12px;">EU region:</span> <input class="setmargn" name="EU[]" type="checkbox" id="FR" value="A13V1IB3VIYZZH" />France
+                                                <input class="setmargn" name="EU[]" type="checkbox" id="ES" value="A1RKKUPIHCS9HS" />Spain
+                                                <input class="setmargn" name="EU[]" type="checkbox" id="UK" Value="A1F83G8C2ARO7P" />United Kingdom
+
+                                                <input class="setmargn" name="EU[]" type="checkbox" id="DE" Value="A1PA6795UKMFR9" />Germany
+                                                <input class="setmargn" name="EU[]" type="checkbox" id="IT" Value="APJ6JRA9NG5V4" />Italy</div>
+
+                                            <div align="left"><span style="font-weight: bold; font-size: 12px;">CN region: </span><input class="setmargn" name="CN[]" type="checkbox" id="CN" Value="AAHKV2X7AFYLW" />China</div>
+
+                                            <div align="left"><span style="font-weight: bold; font-size: 12px;">FE region: </span><input class="setmargn" name="FE[]" type="checkbox" id="JP" Value="A1VC38T7YXB528" />Japan
+                                                <input class="setmargn" name="FE[]" type="checkbox" id="AU" Value="A39IBJ37TRP1C6" />Australia</div>
+                                            <% } %>
+
+                                </div>
+                                <!-- <div class="input-group date col-sm-7">
+        <input type="text" class="form-control" name="marketplaceid" value=<% if (user.mws.length>0) { %><%= user.mws[0].marketplaceid %><% } %>>
+     </div> -->
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="control-label col-sm-5 setAlign" for="secretkey">Secret Key:</label>
+                                <div class="input-group date col-sm-7">
+                                    <input type="text" class="form-control" name="secretkey" value=<% if (user.mws.length>0) { %>
+                                    <%= user.mws[0].secretkey %>
+                                        <% } %>>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-5 setAlign" for="awsaccesskeyid">AWSAccessKeyId:</label>
+                                <div class="input-group date col-sm-7">
+                                    <input type="text" class="form-control" name="awsaccesskeyid" value=<% if (user.mws.length>0) { %>
+                                    <%= user.mws[0].awsaccesskeyid %>
+                                        <% } %>>
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <div class="col-sm-12">
+                                    <input type="submit" id="amz_cred_save" class="btn btn-primary btn-lg" value="<% if (user.mws.length>0) { %> Update  <% } else{ %> Save <% } %>" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="loader" id="loaderDiv" style="display: none;"></div>
+    </div>
+    <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
+    <script src="http://cdn.jsdelivr.net/jquery.cookie/1.4.0/jquery.cookie.min.js"></script>
+    <script src="../public/js/jquery/amzcredajax.js"></script>
+
+    <!-- <script type="text/javascript">
+  $('.hidemessage').hide(2000);
+
+   $(":checkbox").on("change", function(){
+        var checkboxValues = {};
+        $(":checkbox").each(function(){
+          checkboxValues[this.id] = this.checked;
+        });
+        $.cookie('checkboxValues', checkboxValues, { expires: 2, path: '/' })
+      });
+
+      function repopulateCheckboxes(){
+        var checkboxValues = $.cookie('checkboxValues');
+        if(checkboxValues){
+          Object.keys(checkboxValues).forEach(function(element) {
+            var checked = checkboxValues[element];
+            $("#" + element).prop('checked', checked);
+          });
+        }
+      }
+
+      $.cookie.json = true;
+      repopulateCheckboxes();
+</script> -->

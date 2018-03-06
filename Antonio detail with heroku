@@ -1,0 +1,32 @@
+Heroku detail:-
+
+Site url:- https://node-ravinder-project.herokuapp.com
+
+username:-  test1@gmail.com
+password:-  123456
+
+
+heroku push code on server:
+
+1. write command:  heroku login
+
+2. Enter email and password that is:- 
+username:-  test1@gmail.com
+password:-  123456
+
+3. go in folder with command cd /home/rexweb/Desktop/amazon/node-ravinder-project
+
+4. write command:- git add .
+ then:- git commit -am "make it better"
+ last:- git push heroku master
+
+ 5. before push also change the database url in config/database.js
+
+
+ Mlab detail:-
+
+ username:-  ravinder8237singh@gmail.com
+ password:-  ravinder@123
+ 
+
+

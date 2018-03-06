@@ -1,0 +1,123 @@
+<%- contentFor('content') %>
+  
+    <div class="right_col" role="main">
+
+ <% if (message.length > 0) { %>
+            <div class="alert alert-success hidemessage">
+                <%= message %>
+            </div>
+            <% } %>
+            <a class="btn btn-success btn-lg " href="javascript: history.go(-1)">←Back To previous page</a>
+        <!-- top tiles -->
+        <div class="container">
+            <h1>Product Detail</h1>
+                <div class="table-responsive">
+                    <table id="example" class="table table-striped table-bordered">
+                        <tbody>
+                            <tr>
+                                <td>Item Name</td>
+                                 <!-- <td>Product ID</td> -->
+                                <td>Marketplace</td>
+                               <td>Seller SKU</td>
+                               <!--  <td>Seller SKU</td>
+                                <td>Quantity</td> -->
+                                <td>Price</td>
+                              <!--   <td>Item Description</td>
+                                <td>Fulfillment Channel</td>
+                                <td>Merchant Shipping Group</td>
+                                <td>Listing Id</td>
+                                <td>Open Date</td>
+                                <td>Status</td> -->
+                                
+                            </tr>
+
+<% productsmatch.forEach(function (productsmatchs) {
+
+if(productsmatchs.productlist.marketplace =='A13V1IB3VIYZZH'){
+                       var flag = 'FR';
+                     }
+                     else if(productsmatchs.productlist.marketplace=='A1PA6795UKMFR9') 
+                     {
+                   var flag = 'GR';
+                     }
+                      else if(productsmatchs.productlist.marketplace=='APJ6JRA9NG5V4') 
+                     {
+                   var flag = 'IT';
+                     }
+                      else if(productsmatchs.productlist.marketplace=='A1F83G8C2ARO7P') 
+                     {
+                   var flag = 'UK';
+                     }
+                     else if(productsmatchs.productlist.marketplace=='A1RKKUPIHCS9HS') 
+                     {
+                   var flag = 'ES';
+                     }
+                     else if(productsmatchs.productlist.marketplace=='A21TJRUUN4KGV') 
+                     {
+                   var flag = 'IN';
+                     }
+                     else if(productsmatchs.productlist.marketplace=='ATVPDKIKX0DER') 
+                     {
+                   var flag = 'US';
+                     }
+                      else if(productsmatchs.productlist.marketplace=='A2EUQ1WTGCTBG2') 
+                     {
+                   var flag = 'CA';
+                     }
+                     else if(productsmatchs.productlist.marketplace=='A1AM78C64UM0Y8') 
+                     {
+                   var flag = 'MX';
+                     }
+                     else if(productsmatchs.productlist.marketplace=='A2Q3Y263D00KWC') 
+                     {
+                   var flag = 'BR';
+                     }
+                     else if(productsmatchs.productlist.marketplace=='AAHKV2X7AFYLW') 
+                     {
+                   var flag = 'CN';
+                     }
+                     else if(productsmatchs.productlist.marketplace=='A1VC38T7YXB528') 
+                     {
+                   var flag = 'JP';
+                     }
+                     else if(productsmatchs.productlist.marketplace=='A39IBJ37TRP1C6') 
+                     {
+                   var flag = 'AU';
+                     }
+
+%>
+<form class="form-horizontal" role="form" id="" method="post" action="/products/update_ebay_price">
+                        <tr class="pr-row">
+                           <td class="item_name"><%= productsmatchs.productlist.item_name %></td>
+                           <td class="marketplace"><%= productsmatchs.productlist.marketplace %></td>
+                           <td class="sku"><%= productsmatchs.productlist.seller_sku %></td>
+                                <!--<td><input type="text" name="product_id" value="<%= productsmatchs.productlist.product_id %>" disabled/></td>
+                                <td class="td-market"><%= productsmatchs.productlist.marketplace %></td>
+                                  <td><input type="text" name="asin" value="<%= productsmatchs.productlist.asin %>" disabled/></td>
+                                <td><input type="text" name="seller_sku" value="<%= productsmatchs.productlist.seller_sku %>" /></td>
+                                <td><input type="text" name="quantity" value="<%= productsmatchs.productlist.quantity %>" disabled/></td> -->
+                                <td class="price-amz"><input type="text" name="price" class="price-value" value="<%= productsmatchs.productlist.price %>" /></td>
+                                <input type="hidden" value="<%= productsmatchs.productlist.seller_sku %>" name="itemid">
+                               <!--  <td class="comment more"><input type="item_descp" name="item_name" value="<%= productsmatchs.productlist.item_descp %>" disabled/></td>
+                                <td><input type="text" name="open_date" value="<%= productsmatchs.productlist.open_date %>" disabled/></td>
+                                <td><input type="text" name="fulfillment_channel" value="<%= productsmatchs.productlist.fulfillment_channel %>" disabled/></td>
+                                <td><input type="text" name="merchant_shipping_group" value="<%= productsmatchs.productlist.merchant_shipping_group %>" disabled/></td>
+                                <td><input type="text" name="listing_id" value="<%= productsmatchs.productlist.listing_id %>" disabled/></td>
+                                <td><input type="text" name="status" value="<%= productsmatchs.productlist.status %>" disabled/></td> -->
+                               
+<!-- <div class="marketplace" style="display:none"><%= productsmatchs.productlist.marketplace %></div>
+<div class="sku" style="display:none"><%= productsmatchs.productlist.seller_sku %></div>
+<div class="price" style="display:none"><%= productsmatchs.productlist.price %></div> -->
+                            </tr>
+<% }) %>
+<tr><td><button type="submit" class="btn btn-sm btn-success" id="amz-price-update">Update Price</button></td></tr>
+</form>
+                        </tbody>
+                    </table>
+
+            </div>
+        </div>
+    </div>
+   <!--  <script src="/js/amazonjs/custom.js"></script> -->
+ 
+   
