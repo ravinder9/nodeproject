@@ -3289,7 +3289,7 @@ ebay.xmlRequest({
             } else {
                 res.send('success');
             }*/
-            res.redirect('edit_amazon_record_price');
+            res.redirect('edit_amazon_record_price/'+user_id);
 
             //res.render('/pages/products/edit_ebay_record_price.ejs', { message: 'Quantity changed successfuly' }); 
         });
