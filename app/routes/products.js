@@ -3290,7 +3290,14 @@ ebay.xmlRequest({
                 res.send('success');
             }*/
             var message='price change successfuly';
-            res.redirect(message,'edit_amazon_record_price/'+itemid);
+            //res.redirect('edit_amazon_record_price/'+itemid);
+            res.redirect(url.format({
+       pathname:'edit_amazon_record_price/'+itemid,
+       query: {
+          "message": 'successfuly'
+          
+        }
+     }));
 
 
             //res.render('/pages/products/edit_ebay_record_price.ejs', { message: 'Quantity changed successfuly' }); 
