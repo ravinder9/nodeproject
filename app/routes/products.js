@@ -3289,8 +3289,15 @@ ebay.xmlRequest({
             } else {
                 res.send('success');
             }*/
-            var message='price change successfuly';
-            res.redirect('edit_amazon_record_price/'+itemid);
+            //var message='price change successfuly';
+            var user_id = req.session.passport.user;
+
+ Products.find({'productlist.userid': user_id,'productlist.platform':'Ebay' }).exec(function(err, product_result) {
+ res.render("pages/products/ebay_product.ejs", { amazonuser: product_result,user:req.user,message: 'price update successfuly' }); 
+
+
+})
+            // res.render("pages/products/ebay_product.ejs", { message: 'price update successfuly' });
             
 
             //res.render('/pages/products/edit_ebay_record_price.ejs', { message: 'Quantity changed successfuly' }); 
@@ -3324,8 +3331,13 @@ ebay.xmlRequest({
             itemid:itemid,
           },
         function(error, data) {
-            res.render("pages/products/edit_ebay_record_price", { productsmatch: productsfind,user:req.user ,message:true});
- 
+             var user_id = req.session.passport.user;
+
+ Products.find({'productlist.userid': user_id,'productlist.platform':'Ebay' }).exec(function(err, product_result) {
+ res.render("pages/products/ebay_product.ejs", { amazonuser: product_result,user:req.user,message: 'quantity update successfuly' }); 
+
+
+})
             /*if (error) {
                 res.send('success');
             } else {

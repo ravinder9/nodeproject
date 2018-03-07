@@ -1,7 +1,11 @@
 <%- contentFor('content') %>
 
     <div class="right_col" role="main">
-
+<% if (message.length > 0) { %>
+            <div class="alert alert-success hidemessage">
+                <%= message %>
+            </div>
+            <% } %>
 <a class="btn btn-success btn-lg " href="javascript: history.go(-1)">←Back To previous page</a>
         <!-- top tiles -->
         <div class="container">
@@ -88,7 +92,9 @@
                     $(function() {
                         $("#example").dataTable();
                     })
-
+setTimeout(function(){
+  $('.hidemessage').remove();
+}, 5000);
                 });
                 $(document).ready(function() {
 
